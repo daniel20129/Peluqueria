@@ -1,0 +1,147 @@
+/* ===== ESTILOS GENERALES ===== */
+body {
+    background-color: #f0f2f5;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ===== CARDS DE CITAS ===== */
+.cita-card {
+    background: white;
+    border-radius: 8px;
+    padding: 12px 15px;
+    margin-bottom: 10px;
+    border-left: 4px solid #007bff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.cita-card:hover {
+    transform: translateX(5px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.12);
+}
+
+.cita-card .hora {
+    font-weight: bold;
+    color: #007bff;
+    font-size: 1.1rem;
+}
+
+.cita-card .cliente {
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.cita-card .telefono {
+    color: #6c757d;
+    font-size: 0.85rem;
+}
+
+.cita-card .servicio {
+    color: #495057;
+    font-size: 0.9rem;
+}
+
+/* ===== BOTONES DE ACCIÓN ===== */
+.cita-card .acciones {
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid #eee;
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+}
+
+.cita-card .acciones .btn {
+    font-size: 0.75rem;
+    padding: 4px 10px;
+}
+
+/* ===== COLUMNAS DE DÍAS ===== */
+.dia-column {
+    background: white;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    min-height: 300px;
+    height: 100%;
+}
+
+.dia-column .dia-nombre {
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    color: white;
+    padding: 10px;
+    border-radius: 6px;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.dia-column .dia-nombre .badge {
+    background: white !important;
+    color: #007bff !important;
+    margin-left: 8px;
+}
+
+/* ===== ESTADOS DE CITAS ===== */
+.cita-card.estado-confirmada {
+    border-left-color: #28a745;
+}
+
+.cita-card.estado-cancelada {
+    border-left-color: #dc3545;
+    opacity: 0.7;
+}
+
+.cita-card.estado-completada {
+    border-left-color: #17a2b8;
+    opacity: 0.8;
+}
+
+.cita-card.estado-no-asistio {
+    border-left-color: #ffc107;
+    opacity: 0.7;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .dia-column {
+        margin-bottom: 20px;
+        min-height: auto;
+    }
+    
+    .cita-card {
+        padding: 10px;
+    }
+    
+    .cita-card .acciones .btn {
+        font-size: 0.7rem;
+        padding: 3px 8px;
+    }
+}
+
+/* ===== ANIMACIONES ===== */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.cita-card {
+    animation: fadeIn 0.3s ease;
+}
+
+/* ===== MENSAJES ===== */
+#mensaje {
+    display: none;
+}
+
+#mensaje.alert {
+    display: block !important;
+}
+
+/* ===== BADGE DE HOY ===== */
+.dia-nombre .badge-hoy {
+    background: #ffc107 !important;
+    color: #000 !important;
+    font-size: 0.7rem;
+    margin-top: 4px;
+    display: inline-block;
+}

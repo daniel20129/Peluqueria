@@ -1,0 +1,14 @@
+###
+# importar modulos
+import os, numpy as np, pandas as pd
+
+### carga de datos
+# base ficticia 1
+base_fic1=pandas.DataFrame(np.random.randint(1,10,1000).reshap(100,10),colums=['var_1','var_b','var_c','var_d','var_e','var_f','var_g','var_h','var_i','var_j'])
+base_fic1
+print(base_fic1)
+
+
+base_fic2=pd.DataFrame([[3.1416,1,'nombre','True'],[2.1416,2, 'nombre','True'],[1.1416,3,'nombre','True']], index)
+
+
