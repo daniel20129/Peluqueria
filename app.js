@@ -230,7 +230,7 @@ document.getElementById('form-cita').addEventListener('submit', async function(e
         nombre_cliente: document.getElementById('nombre').value.trim(),
         telefono: document.getElementById('telefono').value.trim(),
         servicio: document.getElementById('servicio').value,
-        estado: document.getElementById('estado').value
+        estado: "Confirmada"
     };
     
     // Validaciones
