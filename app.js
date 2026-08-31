@@ -14,7 +14,7 @@ const URL_BASE = 'https://hook.us2.make.com';// ¡CAMBIA ESTO!
 // Por ahora, TODOS usan el mismo (el que creaste para guardar)
 const ENDPOINTS = {
     guardar: '/ohogx0u23kouxlxl7d6jvnrroe0ggc4x',  // ¡Este es tu path!
-    citas: '/ohogx0u23kouxlxl7d6jvnrroe0ggc4x',    // Temporalmente igual
+    citas: '/img1teeidv184ikhyno968la0ib18rbw',    // Temporalmente igual
     cita: '/ohogx0u23kouxlxl7d6jvnrroe0ggc4x',     // Temporalmente igual
     editar: '/ohogx0u23kouxlxl7d6jvnrroe0ggc4x',   // Temporalmente igual
     completar: '/ohogx0u23kouxlxl7d6jvnrroe0ggc4x',// Temporalmente igual
@@ -26,7 +26,7 @@ const ENDPOINTS = {
 // ============================================
 async function hacerPeticion(endpoint, options = {}) {
     const url = `${URL_BASE}${endpoint}`;
-    
+    console.log(sdssf);
     // Configuración por defecto para evitar CORS
     const config = {
         method: options.method || 'GET',
@@ -263,7 +263,7 @@ document.getElementById('form-cita').addEventListener('submit', async function(e
             
             // ⚠️ TEMPORALMENTE COMENTADO: cargarAgenda();
             // Descomentar cuando tengas el webhook de consulta configurado
-            // cargarAgenda();
+            cargarAgenda();
             
             // Mostrar mensaje de que la cita se guardó pero no se actualiza la agenda
             setTimeout(() => {
