@@ -13,8 +13,8 @@ const URL_BASE = 'https://hook.us2.make.com';// ¡CAMBIA ESTO!
 // ⚠️ IMPORTANTE: Cada operación DEBE tener su propio webhook en Make.com
 // Por ahora, TODOS usan el mismo (el que creaste para guardar)
 const ENDPOINTS = {
-    guardar: '/ohogx0u23kouxlxl7d6jvnrroe0ggc4x',  // ¡Este es tu path!
-    citas: '/img1teeidv184ikhyno968la0ib18rbw',    // Temporalmente igual
+    guardar: '/ohogx0u23kouxlxl7d6jvnrroe0ggc4x',    // Este path ya esta listo
+    citas: 'https://hook.us2.make.com/img1teeidv184ikhyno968la0ib18rbw',    // Este path ya esta listo
     cita: '/ohogx0u23kouxlxl7d6jvnrroe0ggc4x',     // Temporalmente igual
     editar: '/ohogx0u23kouxlxl7d6jvnrroe0ggc4x',   // Temporalmente igual
     completar: '/ohogx0u23kouxlxl7d6jvnrroe0ggc4x',// Temporalmente igual
