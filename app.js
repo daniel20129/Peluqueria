@@ -80,7 +80,6 @@ async function hacerPeticion(endpoint, options = {}) {
         };
     }
 }
-
 // ============================================
 // CARGAR AGENDA (VERSIÓN MEJORADA)
 // ============================================
@@ -104,8 +103,37 @@ async function cargarAgenda() {
         );
         
         if (resultado.ok) {
-            const citas = resultado.data.citas || resultado.data || [];
+            // PASO 1: Tomar los datos brutos de la respuesta
+            let data = resultado.data;
+            let citas = [];
+            
+            // PASO 2: Si data es un ARRAY, usarlo directamente
+            if (Array.isArray(data)) {
+                citas = data;
+            }
+            // PASO 3: Si data es un OBJETO, buscar un array en sus propiedades
+            else if (typeof data === 'object' && data !== null) {
+                // Buscar la primera propiedad que sea un array
+                const possibleArrays = Object.values(data).filter(val => Array.isArray(val));
+                if (possibleArrays.length > 0) {
+                    citas = possibleArrays[0]; // Usar el primer array que encontremos
+                } else {
+                    // Si no hay ningún array, intentar usar 'data' o 'citas' como último recurso
+                    citas = data.citas || data.data || [data];
+                }
+            } 
+            // PASO 4: Si no es ni array ni objeto, o es null, usar array vacío
+            else {
+                citas = [];
+            }
+            
+            // Asegurarnos de que citas sea un array (por si acaso)
+            if (!Array.isArray(citas)) {
+                citas = [];
+            }
+            
             mostrarAgenda(citas, lunes);
+            
         } else {
             // Si falla, mostrar mensaje amigable pero NO romper el flujo
             console.warn('No se pudo cargar la agenda:', resultado.data.mensaje);
@@ -133,7 +161,6 @@ async function cargarAgenda() {
         `;
     }
 }
-
 // ============================================
 // MOSTRAR AGENDA CON BOTONES DE ACCIÓN
 // ============================================
