@@ -8,17 +8,17 @@
 
 // ⚠️ IMPORTANTE: Cambia esta URL por la de tu webhook de Make.com
 // No uses make.com directamente, usa la URL completa de tu webhook
-const URL_BASE = 'https://hook.us2.make.com';// ¡CAMBIA ESTO!
+
+const URL_BASE = 'https://hook.us2.make.com';
 
 // ⚠️ IMPORTANTE: Cada operación DEBE tener su propio webhook en Make.com
-// Por ahora, TODOS usan el mismo (el que creaste para guardar)
 const ENDPOINTS = {
-    guardar: '/ohogx0u23kouxlxl7d6jvnrroe0ggc4x',    // Este path ya esta listo
-    citas: 'https://hook.us2.make.com/img1teeidv184ikhyno968la0ib18rbw',    // Este path ya esta listo
-    cita: '/ohogx0u23kouxlxl7d6jvnrroe0ggc4x',     // Temporalmente igual
-    editar: '/ohogx0u23kouxlxl7d6jvnrroe0ggc4x',   // Temporalmente igual
-    completar: '/ohogx0u23kouxlxl7d6jvnrroe0ggc4x',// Temporalmente igual
-    cancelar: '/ohogx0u23kouxlxl7d6jvnrroe0ggc4x'  // Temporalmente igual
+    guardar: '/ohogx0u23kouxlxl7d6jvnrroe0ggc4x',    
+    citas: '/img1teeidv184ikhyno968la0ib18rbw',    // ⬅️ ¡CORREGIDO! Quitamos el "https://hook.us2.make.com" de aquí
+    cita: '/ohogx0u23kouxlxl7d6jvnrroe0ggc4x',     
+    editar: '/ohogx0u23kouxlxl7d6jvnrroe0ggc4x',   
+    completar: '/ohogx0u23kouxlxl7d6jvnrroe0ggc4x',
+    cancelar: '/ohogx0u23kouxlxl7d6jvnrroe0ggc4x'  
 };
 
 // ============================================
