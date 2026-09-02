@@ -26,7 +26,7 @@ const ENDPOINTS = {
 // ============================================
 async function hacerPeticion(endpoint, options = {}) {
     const url = `${URL_BASE}${endpoint}`;
-    console.log(sdssf);
+    
     // Configuración por defecto para evitar CORS
     const config = {
         method: options.method || 'GET',
